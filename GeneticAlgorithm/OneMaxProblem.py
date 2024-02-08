@@ -38,7 +38,7 @@ def selection(population, fitness_scores, tournament_size=3):
 
     for i in range(len(population)):
         tournament_candidates = random.sample(range(len(population)), tournament_size)
-        index_of_winner = tournament_candidates[0]  # Assume the first candidate is the winner initially
+        index_of_winner = tournament_candidates[0]
 
         for candidate in tournament_candidates[1:]:
             if fitness_scores[candidate] > fitness_scores[index_of_winner]:

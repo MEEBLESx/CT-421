@@ -15,11 +15,10 @@ def gen_rand_binary_string(length):
     return result
 
 def calculate_fitness(solution):
-    # Check if the solution has at least one '1'
     if 1 in solution:
-        return sum(solution)  # Fitness is the number of '1's in the string
+        return sum(solution)
     else:
-        return 2 * len(solution)  # Fitness is 2 times the length if there are no '1's
+        return 2 * len(solution)
 
 def mutate(solution, r_mut):
     mutated_solution = solution.copy()
@@ -40,7 +39,7 @@ def selection(population, fitness_scores, tournament_size=3):
 
     for i in range(len(population)):
         tournament_candidates = random.sample(range(len(population)), tournament_size)
-        index_of_winner = tournament_candidates[0]  # Assume the first candidate is the winner initially
+        index_of_winner = tournament_candidates[0]
 
         for candidate in tournament_candidates[1:]:
             if fitness_scores[candidate] > fitness_scores[index_of_winner]:
