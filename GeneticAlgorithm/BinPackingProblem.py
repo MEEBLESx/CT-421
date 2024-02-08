@@ -80,7 +80,7 @@ def selection(population, fitness_scores, tournament_size=3):
     return selected_parents
 
 
-def genetic_algorithm(population_size, r_mut, generations, data):
+def genetic_algorithm(title, population_size, r_mut, generations, data):
     global total_bins
     global all_of_them
     all_bins = []
@@ -114,16 +114,16 @@ def genetic_algorithm(population_size, r_mut, generations, data):
         population = new_population
 
     pop.clear()
-    print(min(all_bins))
+    print(f"{title}: {min(all_bins)} Bins")
     return avg_fitness
 
 
-def plot_average_fitness(avg_fitness):
+def plot_average_fitness(avg_fitness, title):
     generations = range(1, len(avg_fitness) + 1)
     plt.plot(generations, avg_fitness, label='Average Fitness')
     plt.xlabel('Generations')
     plt.ylabel('Average Fitness')
-    plt.title('Average Fitness Over Generations')
+    plt.title('Average Fitness Over Generations ' + title)
     plt.legend()
     plt.show()
 
@@ -151,6 +151,6 @@ with open('Binpacking-2 (1).txt', 'r') as file:
         result[title[len(title) - 1]] = data
 
 for x in range(len(title)):
-        avg_fitness = genetic_algorithm(pop_size, r_mut, generations, result[title[x]])
-        plot_average_fitness(avg_fitness)
+        avg_fitness = genetic_algorithm(title[x], pop_size, r_mut, generations, result[title[x]])
+        plot_average_fitness(avg_fitness, title[x])
 
