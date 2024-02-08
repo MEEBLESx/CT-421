@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 pop_size = 100
 string_length = 30
 r_mut = 0.01
-generations = 1000
+generations = 100
 
 
 def gen_rand_binary_string(length):
@@ -82,7 +82,7 @@ def plot_average_fitness(avg_fitness):
     plt.plot(generations, avg_fitness, label='Average Fitness')
     plt.xlabel('Generations')
     plt.ylabel('Average Fitness')
-    plt.title('Average Fitness Over Generations')
+    plt.title('Average Fitness Over Generations Deceptive Landscape')
     plt.legend()
     plt.show()
 

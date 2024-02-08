@@ -79,7 +79,7 @@ def plot_average_fitness(avg_fitness):
     plt.plot(generations, avg_fitness, label='Average Fitness')
     plt.xlabel('Generations')
     plt.ylabel('Average Fitness')
-    plt.title('Average Fitness Over Generations')
+    plt.title('Average Fitness Over Generations One Max Problem')
     plt.legend()
     plt.show()
 
